@@ -1,0 +1,97 @@
+/**
+  * COLORS
+  * Colors are shared between backgrounds and text by default. 
+  * You can also use them to power borders, fills or shadows, for example.
+  */
+$hue: (
+  'primary': 200deg,
+  'secondary': 270deg
+);
+
+$sev: (
+  'success': 120deg,
+  'info': 180deg,
+  'warning': 30deg,
+  'danger': 0deg
+);
+
+$lum: (
+  'light': 95%,
+  'shade': 80%,
+  'dark': 25%
+);
+
+html {
+  --bgc: #fefefe;
+  --c: #272727;
+  --h: 60deg;
+  --l: 60%;
+  --light: 95%;
+  --dark: 25%;
+  @each $hn, $hv in $hue {
+    --#{$hn}: #{$hv};
+  }
+  @each $sn, $sv in $sev {
+    --#{$sn}: #{$sv};
+  }
+  @each $ln, $lv in $lum {
+    --#{$ln}: #{$lv};
+  }
+}
+@each $hn, $hv in $hue {
+  .#{$hn} {
+    --h: var(--#{$hn});
+  }
+}
+@each $sn, $sv in $sev {
+  .#{$sn} {
+    --h: var(--#{$sn});
+  }
+}
+@each $ln, $lv in $lum {
+  .#{$ln} {
+    --l: var(--#{$ln});
+  }
+}
+
+p {
+  padding: 0.5em;
+  background-color: var(--bgc);
+  color: var(--c);
+}
+
+// color variants
+.cm {
+  // complement
+  --pc: calc(var(--h) + 180deg);
+}
+.t1 {
+  // upper triad
+  --pc: calc(var(--h) + 120deg);
+}
+.t2 {
+  // lower triad
+  --pc: calc(var(--h) - 120deg);
+}
+
+// background and text setters
+.background {
+  --bgc: hsl(var(--pc, var(--h)), 100%, var(--lc, var(--l)));
+  --c: #fefefe;
+  &.light {
+    --c: hsl(var(--pc, var(--h)), 100%, var(--dark));
+  }
+  &.dark {
+    --c: hsl(var(--pc, var(--h)), 100%, var(--light));
+  }
+}
+.text {
+  --c: hsl(var(--pc, var(--h)), 100%, var(--lc, var(--l)));
+  --bgc: #fefefe;
+  &.light {
+    --bgc: hsl(var(--pc, var(--h)), 100%, var(--dark));
+  }
+  &.dark {
+    --bgc: hsl(var(--pc, var(--h)), 100%, var(--light));
+  }
+}

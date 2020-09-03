@@ -1,0 +1,6 @@
+/** full-bleed breaks out from the current content margins.
+It’s a good idea to add an inner container that has a max-width and auto horizontal margin.***/
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}

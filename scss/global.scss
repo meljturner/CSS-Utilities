@@ -1,0 +1,99 @@
+// First up: config
+@import 'config';
+
+// Next: pull in gorko for design tokens
+@import '../node_modules/gorko/gorko.scss';
+
+// Pull in modern reset
+@import 'reset';
+
+// Pull in color gamut and text/background setters
+@import 'utilities/gamut';
+
+// Global CSS starts
+:root {
+  --data-hue: '0deg';
+  --metric-keyline-height: 1em;
+}
+body {
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-bottom: get-size('600');
+
+  @include apply-utility('weight', 'medium');
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: get-size('700');
+}
+
+h2,
+h3 {
+  font-size: get-size('600');
+}
+
+// a {
+//   color: currentColor;
+// }
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0.5em auto;
+}
+
+th {
+  text-align: left;
+  width: 170px;
+}
+
+:focus {
+  outline: 2px dotted;
+  outline-offset: 0.25rem;
+}
+
+// Utilities
+@import 'utilities/flow';
+@import 'utilities/radius';
+@import 'utilities/splitter';
+@import 'utilities/wrapper';
+@import 'utilities/visually-hidden';
+@import 'utilities/quote-me';
+@import 'utilities/inset';
+@import 'utilities/link';
+@import 'utilities/small-caps';
+@import 'utilities/ghost';
+@import 'utilities/keyline';
+
+// Blocks
+@import 'blocks/stripe';
+@import 'blocks/full-bleed';
+@import 'blocks/button';
+@import 'blocks/key-header';
+@import 'blocks/pill';
+@import 'blocks/site-head';
+@import 'blocks/summary';
+@import 'blocks/table-group';
+@import 'blocks/user';
+@import 'blocks/card';
+
+.swatch {
+  display: inline-block;
+  border-radius: 100%;
+  border: 1px solid grey;
+  margin: 1em -1.5em;
+  width: 80px;
+  height: 80px;
+}
+.title {
+  text-align: center;
+}
+[data-hue]::after {
+  content: var(--notdef, 'what');
+}

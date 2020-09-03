@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Custom Property Scope</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+  </head>
+  <body class="wrapper font-base">
+    <div data-hue="230deg">Primary hue: </div>
+    <div class="flow">
+      <h1 class="title quote-me">CSS Utility Classes</h1>
+      <h2 class="text primary cm">Colors</h2>
+      <p>This page contains a color utility (_gamut.scss) that explicity defines a <em>primary</em> and <em>secondary</em> hue. The utility auto-generates the complement (cm) and two triadic shades (t1, t2) as well as a light and dark variant of each. These different colors are shown here:</p>
+      <table>
+        <tr>
+          <th></th>
+          <th>Color</th>
+          <th>Complement</th>
+          <th>Triadic-1</th>
+          <th>Triadic-2</th>
+        </tr>
+        <tr class="primary">
+          <th>Primary</th>
+          <td>
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+          <td class="cm">
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+          <td class="t1">
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+          <td class="t2">
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </div>
+        </tr>
+        <tr class="secondary">
+          <th>Secondary</th>
+          <td>
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+          <td class="cm">
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+          <td class="t1">
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+          <td class="t2">
+            <div class="swatch background dark"></div>
+            <div class="swatch background"></div>
+            <div class="swatch background light"></div>
+          </td>
+        </tr>
+      </table>
+      <p class="text primary cm"><a class="link" href="#">Note that</a> this paragraph and the previous sub-heading each specify class="text primary cm" so are displayed in the primary complement color. </p>
+      <p class="text secondary">This paragraph has class="text secondary", and the color changes accordingly. The following paragraph is a longer block with class="background secondary t2" to get a background of the secondary triadic-2 color.</p>
+      <p class="background secondary t2">
+        It should be noted that all these colors are generated dynamically so, for example, the primary hue could be changed by javascript and all the primary shades would change. <a class="link" href="#">Also, links like this</a> have dynamic hover states that can invert the current color.
+        <a class="link" href="#">Check this out, its a long link that can span lines</a
+        > and still handle hover state appropriately.
+      </p>
+      <p>In addition to primary and secondary colors standard colors are provided for buttons and error messages named <em>info</em>, <em>danger</em>, <em>warning</em>, and <em>success</em>. They also have light and dark variants.</p>
+        <table>
+          <tr>
+            <th></th>
+            <th>Info</th>
+            <th>Danger</th>
+            <th>Warning</th>
+            <th>Success</th>
+          </tr>
+          <tr>
+            <th>Errs/Msgs</th>
+            <td class="info">
+              <div class="swatch background dark"></div>
+              <div class="swatch background"></div>
+              <div class="swatch background light"></div>
+            </td>
+            <td class="danger">
+              <div class="swatch background dark"></div>
+              <div class="swatch background"></div>
+              <div class="swatch background light"></div>
+            </td>
+            <td class="warning">
+              <div class="swatch background dark"></div>
+              <div class="swatch background"></div>
+              <div class="swatch background light"></div>
+            </td>
+            <td class="success">
+              <div class="swatch background dark"></div>
+              <div class="swatch background"></div>
+              <div class="swatch background light"></div>
+            </td>
+          </tr>
+        </table>
+      <div class="card background success light">
+        <h2 class="quote-me font-serif">My Card</h2>
+        <p class="text dark">
+          The card has class="card background success light" but this para has class="text dark"; it inherits the hue from its parent for text and overrides the 'light' modifier with 'dark'.
+        </p>
+        <div class="btn success">Info</div>
+        <p class="text danger normal">
+          This para has class="text danger normal". The 'normal' modifier is needed here because 'light' is inherited from the parent.
+          <a class="link" href="#"
+            >Check this, the link still gets an appropriate hover state</a
+          >
+        </p>
+      </div>
+      <h1 class="keyline primary light t1 full-bleed">
+        <span>Other Examples Follow</span>
+      </h1>
+      <div class="stripe full-bleed background primary light t1">
+        <p class="wrapper">ipsum, dolor sit amet consectetur adipisicing elit. Non in laudantium tenetur sit dolores culpa, odio quod soluta commodi repellat, illum tempore magni doloremque et minus maxime accusantium aspernatur nesciunt quos necessitatibus. sint minima. Excepturi, non neque! Ut, impedit ea quas pariatur libero, repellendus deserunt fugit aspernatur est nisi deleniti. Voluptate mollitia  placeat dolor atque molestiae eveniet omnis, cum iure laudantium reprehenderit? In animi distinctio culpa voluptatum ipsam vero, ex, mollitia quisquam tempora sed fugiat. Error nihil vitae tempora totam! Sunt tenetur fuga, in totam cupiditate culpa sequi nobis iste provident quia animi dolorum possimus soluta rerum ut nemo repudiandae. Ea quod accusantium quasi sed porro, officiis laudantium repudiandae dignissimos cum distinctio sequi officia id molestias corrupti perspiciatis totam omnis veritatis libero inventore exercitationem itaque! Saepe necessitatibus harum debitis reprehenderit dolores commodi similique perspiciatis. Debitis vel unde sint nihil saepe optio possimus nulla corrupti deserunt obcaecati, fuga blanditiis, praesentium a porro. Quod ipsam hic beatae eaque quidem!
+          </p>
+        </div>
+    </div>
+  </body>
+</html>

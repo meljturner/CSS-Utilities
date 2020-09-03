@@ -1,0 +1,10 @@
+.stripe {
+  --pbg: hsl(var(--ph, var(--h)), 100%, var(--lc, var(--l)));
+  background: linear-gradient(-2deg, #fff 15%, var(--pbg) 10%, 85%, #fff 85%);
+  * {
+    padding: 5em 0;
+    text-align: justify;
+    columns: 2;
+    column-gap: 4em;
+  }
+}

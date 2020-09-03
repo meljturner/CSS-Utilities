@@ -1,0 +1,50 @@
+.link {
+  /* Variables */
+  --space: 0.125em;
+  --link-color: var(--c, var(--c-default));
+  --bg-size: var(--space);
+  --shadow-size: 0;
+
+  /* Layout */
+  padding: var(
+    --space
+  ); /* Inline elements won't affect vertical rhythm, so we don't need to specify each direction */
+
+  /* Text styles */
+  color: var(--link-color); /* Use the variable for our color */
+  text-decoration: none; /* Remove the default underline */
+
+  /* Box styles */
+  border-radius: var(--space); /* Make it a tiny bit fancier &#x2728; */
+  background-image: linear-gradient(var(--c), var(--c));
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 100% var(--bg-size);
+  box-shadow: 0 0 0 var(--shadow-size, 0) var(--c); /* Used in the :active state */
+  box-decoration-break: clone; /* Ensure the styles repeat on links spanning multiple lines */
+
+  /* Transition declarations */
+  transition-property: color, background-size, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  will-change: color, background-size, box-shadow;
+}
+
+/* Idle states */
+.link:link,
+.link:visited {
+  --link-color: var(--c); /* Use --c, or fallback to currentColor */
+}
+
+/* Interacted-with states */
+.link:hover,
+.link:focus,
+.link:active {
+  --bg-size: 100%;
+  --link-color: var(--pbg, var(--bg-default));
+}
+
+/* Active state */
+.link:active {
+  --shadow-size: var(--space); /* Define the box-shadow size */
+}

@@ -1,0 +1,12 @@
+/***
+The minmax function clamps grid items by
+setting the smallest size for items using a 
+CSS Custom Property with a fallback of 16rem.
+The maximum size is set as 1fr, the remaining space
+is split up equally between the other items.
+***/
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size, 16rem), 1fr));
+  grid-gap: 1rem;
+}

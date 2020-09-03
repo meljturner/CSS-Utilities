@@ -1,0 +1,16 @@
+.pill {
+  display: inline-block;
+  padding: 0.3rem 0.35rem;
+  font-size: get-size('400');
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  background-color: hsl(var(--pc, var(--h)), 100%, var(--lc, var(--l)));
+  color: hsl(var(--pc, var(--h)), 100%, calc(120% - var(--lc, var(--l))));
+
+  // Capitalize only in english
+  [lang*='en'] & {
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test CSS Utilities</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link
+      rel="stylesheet"
+      media="print"
+      href="/fonts/fonts.css"
+      onload="this.media='all'"
+    />
+  </head>
+  <body class="wrapper splitter">
+    <div class="flow">
+      <h1 class="title quote-me small-caps">Testing CSS Utilities</h1>
+      <img
+        src="images/sharon-pittaway-iMdsjoiftZo-unsplash.jpg"
+        alt="a picture"
+        width="300"
+      />
+      <img
+        src="images/sharon-pittaway-iMdsjoiftZo-unsplash.jpg"
+        alt="a picture"
+        width="300"
+        class="rotate"
+      />
+      <p class="danger background light">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur suscipit
+        minima a hic neque <a class="link" href="#">quisquam maxime</a> eius quis corporis
+        nostrum eligendi magnam molestias,
+        <a class="link" href="#">check this out, its a long link that should span lines</a
+        >harum animi consequuntur iste provident, tempore similique?
+      </p>
+      <div class="card | flow radius inset | bg-info font-base">
+        <h2 class="quote-me small-caps">My Card</h2>
+        <p class="link primary">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur suscipit
+          quisquam maxime minima a hic neque quisquam maxime eius quis corporis nostrum
+          eligendi magnam molestias, harum animi consequuntur iste provident, tempore
+          similique?
+        </p>
+        <p class="background secondary dark">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur suscipit
+          <a class="link" href="#"
+            >check this out, its a long link that should span lines</a
+          >
+          minima a hic neque quisquam maxime eius quis corporis nostrum eligendi magnam
+          molestias, harum animi
+          <span class="link" href="#"> not a real link</span> consequuntur iste provident,
+          tempore similique?
+        </p>
+      </div>
+      <div class="rect1 btn btn-success font-base">Box 1</div>
+      <div class="rect2 btn ghost info font-base" role="button">Box 2</div>
+    </div>
+  </body>
+</html>
