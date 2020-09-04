@@ -4,15 +4,15 @@
   * You can also use them to power borders, fills or shadows, for example.
   */
 $hue: (
-  'primary': 120deg,
-  'secondary': 270deg
+  'primary': 120,
+  'secondary': 270
 );
 
 $sev: (
-  'success': 120deg,
-  'info': 180deg,
-  'warning': 30deg,
-  'danger': 0deg
+  'success': 120,
+  'info': 180,
+  'warning': 30,
+  'danger': 0
 );
 
 $lum: (
@@ -40,7 +40,7 @@ html {
 }
 @each $hn, $hv in $hue {
   .#{$hn} {
-    --h: var(--#{$hn});
+    --h: calc(var(--#{$hn}) * 1deg);
   }
 }
 @each $sn, $sv in $sev {
