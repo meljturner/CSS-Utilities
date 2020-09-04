@@ -1,11 +1,14 @@
-# CUBE CSS Dashboard Example
+# CSS-Utilities
 
-A banking dashboard that you build in the Piccalilli tutorial: Build a dashboard with CUBE CSS. [Check out the tutorial here](https://piccalil.li/tutorial/build-a-dashboard-with-cube-css/).
+Testing area for various CSS utility and component classes. I am just now getting familiar with the CUBE methodology (Andy Bell) and need a repo to save and test reusable CSS
 
-![Build a dashboard with CUBE CSS. An in-depth guide to going from plain HTML all the way to a full styled banking dashboard, using the CUBE CSS methodology.](https://piccalil.li/images/social-share/cube-dash.png)
+## gamut - a generic color setter
 
-## Getting started
+A color utility that explicity defines a primary and secondary hue. The utility auto-generates the complement (cm) and two triadic shades (t1, t2) as well as a light and dark variant of each. Choose these colors by setting the CSS custom properties --primary and --secondary at the :root level to a specific hue. e.g. --primary: 120deg;
 
-1. Clone the repo
-2. Run `npm install`
-3. Run `npm start` to run and watch Sass or run `npm run build` to create a production version of the CSS.
+Then use the following classes:
+- background/text - to target the current background or text color (don't use both on same element).
+- primary/secondary - to select primary or secondary color (again, dont use both on same element).
+- cm/t1/t2 - to select the complement, triadic-1 or triadic-2 variant color (default is actual color).
+- light/shade/normal/dark - to select shade (defaults to normal)
+
