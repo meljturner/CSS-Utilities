@@ -94,6 +94,7 @@ th {
 .title {
   text-align: center;
 }
-[data-hue]::after {
-  content: var(--notdef, 'what');
+.config::after {
+  counter-set: primary var(--primary);
+  content: counter(primary);
 }
