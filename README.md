@@ -16,3 +16,13 @@ Then use the following classes:
 - primary/secondary/info/success/warning/danger - to select a hue (again, dont use more than one on same element).
 - cm/t1/t2 - to select the complement, triadic-1 or triadic-2 variant color (default is actual color).
 - light/shade/normal/dark - to select shade (defaults to normal)
+
+## full-bleed - escape current wrapper constraints
+
+Class is used to temporarily escape display boundary, especially to
+modify a background. May be necessary to re-wrap any contained elements
+if their width is to be constrained.
+
+## stripe - make a slanted background
+
+Make background from background hue as a horizontal stripe angled at 2 degrees. e.g. <p class="stripe background primary light">
