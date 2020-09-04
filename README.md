@@ -26,3 +26,7 @@ if their width is to be constrained.
 ## stripe - make a slanted background
 
 Make background from background hue as a horizontal stripe angled at 2 degrees. e.g. class="stripe background primary light"
+
+## keyline - create a keylined heading
+
+A keyline is a horizontal line on each side of the content. The line can be thickened by setting --metric-keyline-height. The keyline also takes on the current color hue setting. The content must be a sub-element e.g. a span.
