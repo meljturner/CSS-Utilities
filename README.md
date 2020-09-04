@@ -25,4 +25,4 @@ if their width is to be constrained.
 
 ## stripe - make a slanted background
 
-Make background from background hue as a horizontal stripe angled at 2 degrees. e.g. <p class="stripe background primary light">
+Make background from background hue as a horizontal stripe angled at 2 degrees. e.g. class="stripe background primary light"
